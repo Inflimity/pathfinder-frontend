@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import {
-    ScrewdriverWrench,
-    ChartLine,
+    Wrench,
+    TrendingUp,
     Users,
     Brain,
-    Gears,
+    Settings,
     LogOut
 } from "lucide-react";
 import { createClient } from "@/lib/supabase";
@@ -40,14 +40,14 @@ export default function AdminDashboard() {
             <aside className="w-64 bg-brand-surface border-r border-brand-card hidden md:flex flex-col">
                 <div className="p-6 border-b border-brand-card flex items-center gap-3">
                     <div className="w-8 h-8 bg-brand-bronze rounded-sm flex items-center justify-center text-white shadow-lg">
-                        <ScrewdriverWrench size={14} />
+                        <Wrench size={14} />
                     </div>
                     <span className="text-xs font-bold uppercase tracking-widest text-white">Admin Core</span>
                 </div>
 
                 <nav className="flex-1 p-4 space-y-1">
                     <button className="w-full flex items-center gap-3 px-3 py-2 bg-slate-800 text-white rounded-sm text-left">
-                        <ChartLine size={14} className="text-brand-bronze" />
+                        <TrendingUp size={14} className="text-brand-bronze" />
                         <span className="text-sm font-semibold">System Overview</span>
                     </button>
                     <button className="w-full flex items-center gap-3 px-3 py-2 text-slate-400 hover:bg-slate-800 hover:text-white transition rounded-sm group text-left">
@@ -59,7 +59,7 @@ export default function AdminDashboard() {
                         <span className="text-sm font-semibold">AI Model Logs</span>
                     </button>
                     <button className="w-full flex items-center gap-3 px-3 py-2 text-slate-400 hover:bg-slate-800 hover:text-white transition rounded-sm group text-left">
-                        <Gears size={14} />
+                        <Settings size={14} />
                         <span className="text-sm font-semibold">API Configurations</span>
                     </button>
                 </nav>
