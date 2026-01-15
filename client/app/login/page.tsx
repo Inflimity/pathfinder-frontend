@@ -110,14 +110,14 @@ export default function LoginPage() {
                         className="w-full bg-brand-bronze hover:bg-brand-bronze-hover text-white py-4 font-bold uppercase tracking-widest text-xs transition-all active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-2"
                     >
                         {loading && <Loader2 className="w-4 h-4 animate-spin" />}
-                        Access Protocol
+                        LOG IN
                     </button>
                 </form>
 
                 <footer className="mt-10 pt-6 border-t border-brand-card text-center">
                     <p className="text-xs text-slate-500">
                         Unauthorized access is strictly monitored. <br className="hidden sm:block" />
-                        New user? <Link href="/signup" className="text-brand-bronze font-bold hover:underline">Register Node</Link>
+                        New user? <Link href="/signup" className="text-brand-bronze font-bold hover:underline">Sign Up</Link>
                     </p>
                 </footer>
             </div>

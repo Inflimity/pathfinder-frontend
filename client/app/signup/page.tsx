@@ -137,7 +137,7 @@ export default function SignupPage() {
 
                 <footer className="mt-8 pt-6 border-t border-brand-card text-center">
                     <p className="text-xs text-slate-500">
-                        Already registered? <Link href="/login" className="text-brand-bronze font-bold hover:underline">Access Protocol</Link>
+                        Already registered? <Link href="/login" className="text-brand-bronze font-bold hover:underline">Log In</Link>
                     </p>
                 </footer>
             </div>
