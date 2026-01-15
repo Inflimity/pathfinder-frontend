@@ -1,0 +1,21 @@
+# .NET Build Outputs
+bin/
+obj/
+
+# IDE & OS
+.DS_Store
+.vscode/
+.idea/
+*.user
+*.suo
+*.sln.dotSettings
+
+# Sensitive Configuration
+appsettings.json
+appsettings.Development.json
+appsettings.Production.json
+
+# Allow example config
+!appsettings.example.json
+
+# User Secrets are stored outside project directory
