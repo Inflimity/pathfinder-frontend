@@ -30,18 +30,23 @@ export default function UserDashboard() {
     ]);
     const [input, setInput] = useState("");
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true); // Start loading true
     const scrollRef = useRef<HTMLDivElement>(null);
     const supabase = createClient();
     const router = useRouter();
 
     useEffect(() => {
-        const getUser = async () => {
+        const checkUser = async () => {
             const { data: { user } } = await supabase.auth.getUser();
-            setUser(user);
+            if (!user) {
+                router.push("/login");
+            } else {
+                setUser(user);
+                setLoading(false);
+            }
         };
-        getUser();
-    }, []);
+        checkUser();
+    }, [router, supabase]);
 
     useEffect(() => {
         if (scrollRef.current) {

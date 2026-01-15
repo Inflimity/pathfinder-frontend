@@ -19,11 +19,30 @@ export default function AdminDashboard() {
     const router = useRouter();
 
     useEffect(() => {
+        const checkAdmin = async () => {
+            const { data: { user }, error: authError } = await supabase.auth.getUser();
+            if (authError || !user) {
+                router.push("/login");
+                return;
+            }
+
+            const { data: profile, error: profileError } = await supabase
+                .from("profiles")
+                .select("role")
+                .eq("id", user.id)
+                .single();
+
+            if (profileError || profile?.role !== 'admin') {
+                router.push("/dashboard");
+            }
+        };
+        checkAdmin();
+
         const interval = setInterval(() => {
             setLatency(Math.floor(Math.random() * (200 - 120 + 1) + 120));
         }, 3000);
         return () => clearInterval(interval);
-    }, []);
+    }, [router, supabase]);
 
     const handleLogout = async () => {
         await supabase.auth.signOut();
